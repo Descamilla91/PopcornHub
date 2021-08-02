@@ -1,0 +1,6 @@
+framework module Pods_PopcornHub_PopcornHubUITests {
+  umbrella header "Pods-PopcornHub-PopcornHubUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

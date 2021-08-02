@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopularMoviesViewController" customModule="PopcornHub" customModuleProvider="target">
+            <connections>
+                <outlet property="popularMediaCollectionView" destination="jVJ-hl-A2w" id="LCm-Kf-fLp"/>
+                <outlet property="searchTextField" destination="MkV-hI-CE9" id="vp9-Sb-2bR"/>
+                <outlet property="view" destination="iN0-l3-epB" id="aqF-xW-YpU"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lzk-uV-CIB" userLabel="Search View">
+                    <rect key="frame" x="16" y="52" width="382" height="54"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MkV-hI-CE9">
+                            <rect key="frame" x="0.0" y="0.0" width="318" height="54"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="didChangeSearchValue:" destination="-1" eventType="editingChanged" id="9P3-Eg-Xeb"/>
+                            </connections>
+                        </textField>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="search" translatesAutoresizingMaskIntoConstraints="NO" id="U1D-J8-zZ3">
+                            <rect key="frame" x="330" y="12" width="40" height="30"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="U1D-J8-zZ3" firstAttribute="leading" secondItem="MkV-hI-CE9" secondAttribute="trailing" constant="12" id="2iZ-U7-486"/>
+                        <constraint firstItem="MkV-hI-CE9" firstAttribute="top" secondItem="Lzk-uV-CIB" secondAttribute="top" id="BPE-rU-Tae"/>
+                        <constraint firstAttribute="trailing" secondItem="MkV-hI-CE9" secondAttribute="trailing" constant="64" id="Mfr-ZW-3La"/>
+                        <constraint firstItem="U1D-J8-zZ3" firstAttribute="top" secondItem="Lzk-uV-CIB" secondAttribute="top" constant="12" id="Mow-UB-s4R"/>
+                        <constraint firstItem="MkV-hI-CE9" firstAttribute="leading" secondItem="Lzk-uV-CIB" secondAttribute="leading" id="MqU-iR-2Gh"/>
+                        <constraint firstAttribute="bottom" secondItem="MkV-hI-CE9" secondAttribute="bottom" id="XjY-Qi-NzW"/>
+                        <constraint firstAttribute="bottom" secondItem="U1D-J8-zZ3" secondAttribute="bottom" constant="12" id="bZz-pN-Gxf"/>
+                        <constraint firstAttribute="trailing" secondItem="U1D-J8-zZ3" secondAttribute="trailing" constant="12" id="eZL-rO-cYG"/>
+                        <constraint firstAttribute="height" constant="54" id="f62-d6-mvE"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TCK-Iw-XV8" userLabel="Content View">
+                    <rect key="frame" x="0.0" y="114" width="414" height="782"/>
+                    <subviews>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="jVJ-hl-A2w">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="782"/>
+                            <color key="backgroundColor" name="AccentColor"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="16" id="r72-w9-jn1">
+                                <size key="itemSize" width="128" height="128"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <color key="backgroundColor" name="AccentColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="jVJ-hl-A2w" secondAttribute="bottom" id="84T-Em-efB"/>
+                        <constraint firstAttribute="trailing" secondItem="jVJ-hl-A2w" secondAttribute="trailing" id="ldg-kK-qc7"/>
+                        <constraint firstItem="jVJ-hl-A2w" firstAttribute="leading" secondItem="TCK-Iw-XV8" secondAttribute="leading" id="nsa-v1-xtt"/>
+                        <constraint firstItem="jVJ-hl-A2w" firstAttribute="top" secondItem="TCK-Iw-XV8" secondAttribute="top" id="xcA-dO-qgb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" name="AccentColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="TCK-Iw-XV8" secondAttribute="trailing" id="0jD-dR-sgT"/>
+                <constraint firstItem="TCK-Iw-XV8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="F1e-SO-5Zc"/>
+                <constraint firstItem="TCK-Iw-XV8" firstAttribute="top" secondItem="Lzk-uV-CIB" secondAttribute="bottom" constant="8" id="G3D-MB-lG1"/>
+                <constraint firstItem="Lzk-uV-CIB" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="JZb-fB-15X"/>
+                <constraint firstItem="Lzk-uV-CIB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="OKh-o6-9Mm"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Lzk-uV-CIB" secondAttribute="trailing" constant="16" id="P4b-5H-zGK"/>
+                <constraint firstAttribute="bottom" secondItem="TCK-Iw-XV8" secondAttribute="bottom" id="tDh-Um-fcz"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="83.705357142857139"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="search" width="16" height="16"/>
+        <namedColor name="AccentColor">
+            <color red="0.019607843831181526" green="0.10588235408067703" blue="0.19607843458652496" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
